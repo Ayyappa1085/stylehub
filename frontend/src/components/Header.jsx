@@ -1,6 +1,6 @@
 import './Header.css';
 import logo from '../assets/logo.png';
-import { FaHome, FaUser, FaSearch } from 'react-icons/fa';
+import { FaHome, FaUser, FaSearch, FaHeart, FaCartPlus } from 'react-icons/fa';
 
 const Header = ({ onCategorySelect }) => (
   <header className="header">
@@ -20,6 +20,8 @@ const Header = ({ onCategorySelect }) => (
       <ul>
         <li title="search"><FaSearch /></li>
         <li title="Home"><FaHome /></li>
+        <li title="Wishlist"><FaHeart /></li>
+        <li title="Cart"><FaCartPlus /></li>
         <li title="Account"><FaUser /></li>
       </ul>
     </nav>

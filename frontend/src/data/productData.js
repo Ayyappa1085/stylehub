@@ -12,7 +12,7 @@ export const productData = {
         discount: 43,
       },
       {
-        image: '/public/assets/shirt1.webp',
+        image: '/public/assets/shirt2.webp',
         title: 'ABSTRACT PRINT SHIRT',
         subtitle: 'PAINTER - GREEN',
         price: 1567,
@@ -20,7 +20,15 @@ export const productData = {
         discount: 51,
       },
       {
-        image: '/public/assets/shirt1.webp',
+        image: '/public/assets/shirt3.webp',
+        title: 'LINEN BLEND TURKISH 3 ...',
+        subtitle: 'THRONE LS-25 - TEAL',
+        price: 2799,
+        oldPrice: 3999,
+        discount: 30,
+      },
+      {
+        image: '/public/assets/shirt4.webp',
         title: 'LINEN BLEND TURKISH 3 ...',
         subtitle: 'THRONE LS-25 - TEAL',
         price: 2799,
@@ -30,7 +38,31 @@ export const productData = {
     ],
     Pants: [
       {
-        image: '/public/assets/shirt1.webp',
+        image: '/public/assets/pant14.webp',
+        title: 'SLIM FIT PANTS',
+        subtitle: 'BLACK',
+        price: 1299,
+        oldPrice: 1999,
+        discount: 35,
+      },
+      {
+        image: '/public/assets/pant11.avif',
+        title: 'SLIM FIT PANTS',
+        subtitle: 'BLACK',
+        price: 1299,
+        oldPrice: 1999,
+        discount: 35,
+      },
+      {
+        image: '/public/assets/pant12.webp',
+        title: 'SLIM FIT PANTS',
+        subtitle: 'BLACK',
+        price: 1299,
+        oldPrice: 1999,
+        discount: 35,
+      },
+      {
+        image: '/public/assets/pant13.webp',
         title: 'SLIM FIT PANTS',
         subtitle: 'BLACK',
         price: 1299,
@@ -40,19 +72,44 @@ export const productData = {
     ],
     Watches: [
       {
-        image: '/public/assets/shirt1.webp',
+        image: '/public/assets/wat11.webp',
         title: 'CLASSIC WATCH',
         subtitle: 'SILVER',
         price: 2999,
         oldPrice: 4999,
         discount: 40,
       },
+      {
+        image: '/public/assets/wat14.webp',
+        title: 'CLASSIC WATCH',
+        subtitle: 'SILVER',
+        price: 2999,
+        oldPrice: 4999,
+        discount: 40,
+      },
+      {
+        image: '/public/assets/wat12.webp',
+        title: 'CLASSIC WATCH',
+        subtitle: 'SILVER',
+        price: 2999,
+        oldPrice: 4999,
+        discount: 40,
+      },
+      {
+        image: '/public/assets/wat13.webp',
+        title: 'CLASSIC WATCH',
+        subtitle: 'SILVER',
+        price: 2999,
+        oldPrice: 4999,
+        discount: 40,
+      },
+      
     ],
   },
   Women: {
     Sarees: [
       {
-        image: '/public/assets/sarees1.jpg',
+        image: '/public/assets/saree1.avif',
         title: 'SILK SAREE',
         subtitle: 'RED',
         price: 2499,
@@ -60,7 +117,7 @@ export const productData = {
         discount: 38,
       },
       {
-        image: '/public/assets/saree2.jpg',
+        image: '/public/assets/saree2.avif',
         title: 'SILK SAREE',
         subtitle: 'RED',
         price: 2499,
@@ -68,7 +125,7 @@ export const productData = {
         discount: 38,
       },
       {
-        image: '/public/assets/saree3.jpg',
+        image: '/public/assets/saree3.avif',
         title: 'SILK SAREE',
         subtitle: 'RED',
         price: 2499,
@@ -76,34 +133,41 @@ export const productData = {
         discount: 38,
       },
       {
-        image: '/public/assets/saree4.jpg',
+        image: '/public/assets/saree4.avif',
         title: 'SILK SAREE',
         subtitle: 'RED',
         price: 2499,
         oldPrice: 3999,
         discount: 38,
       },
-      {
-        image: '/public/assets/saree5.webp',
-        title: 'SILK SAREE',
-        subtitle: 'RED',
-        price: 2499,
-        oldPrice: 3999,
-        discount: 38,
-      },
-      {
-        image: '/public/assets/saree6.jpg',
-        title: 'SILK SAREE',
-        subtitle: 'RED',
-        price: 2499,
-        oldPrice: 3999,
-        discount: 38,
-      },
+      
 
     ],
     Kurtas: [
       {
-        image: '/public/assets/shirt1.webp',
+        image: '/public/assets/kurta1.avif',
+        title: 'COTTON KURTA',
+        subtitle: 'BLUE',
+        price: 999,
+        oldPrice: 1599,
+        discount: 37,
+      },
+      {
+        image: '/public/assets/kurta4.avif',
+        title: 'COTTON KURTA',
+        subtitle: 'BLUE',
+        price: 999,
+        oldPrice: 1599,
+        discount: 37,
+      },{
+        image: '/public/assets/kurta3.avif',
+        title: 'COTTON KURTA',
+        subtitle: 'BLUE',
+        price: 999,
+        oldPrice: 1599,
+        discount: 37,
+      },{
+        image: '/public/assets/kurta2.avif',
         title: 'COTTON KURTA',
         subtitle: 'BLUE',
         price: 999,
@@ -115,17 +179,66 @@ export const productData = {
   Kids: {
     Shirts: [
       {
-        image: '/public/assets/shirt1.webp',
+        image: '/public/assets/bs13.avif',
         title: 'KIDS SHIRT',
         subtitle: 'YELLOW',
         price: 499,
         oldPrice: 799,
         discount: 38,
       },
+       {
+        image: '/public/assets/bs14.avif',
+        title: 'KIDS SHIRT',
+        subtitle: 'YELLOW',
+        price: 499,
+        oldPrice: 799,
+        discount: 38,
+      },
+      {
+        image: '/public/assets/bs12.avif',
+        title: 'KIDS SHIRT',
+        subtitle: 'YELLOW',
+        price: 499,
+        oldPrice: 799,
+        discount: 38,
+      },
+       {
+        image: '/public/assets/bs11.avif',
+        title: 'KIDS SHIRT',
+        subtitle: 'YELLOW',
+        price: 499,
+        oldPrice: 799,
+        discount: 38,
+      },
+      
     ],
     Pants: [
       {
-        image: '/public/assets/shirt1.webp',
+        image: '/public/assets/bp11.avif',
+        title: 'KIDS PANTS',
+        subtitle: 'GREEN',
+        price: 599,
+        oldPrice: 999,
+        discount: 40,
+      },
+      {
+        image: '/public/assets/bp12.avif',
+        title: 'KIDS PANTS',
+        subtitle: 'GREEN',
+        price: 599,
+        oldPrice: 999,
+        discount: 40,
+      },
+      {
+        image: '/public/assets/bp13.avif',
+        title: 'KIDS PANTS',
+        subtitle: 'GREEN',
+        price: 599,
+        oldPrice: 999,
+        discount: 40,
+      },
+      {
+        image: '/public/assets/bp15.avif',
         title: 'KIDS PANTS',
         subtitle: 'GREEN',
         price: 599,
@@ -135,7 +248,7 @@ export const productData = {
     ],
     Belt: [
       {
-        image: '/public/assets/bel1.jpg',
+        image: '/public/assets/belt1.webp',
         title: 'KIDS BELT',
         subtitle: 'BLACK',
         price: 199,
@@ -143,7 +256,7 @@ export const productData = {
         discount: 50,
       },
       {
-        image: '/public/assets/bel2.jpg',
+        image: '/public/assets/belt3.webp',
         title: 'KIDS BELT',
         subtitle: 'BLACK',
         price: 199,
@@ -151,7 +264,7 @@ export const productData = {
         discount: 50,
       },
       {
-        image: '/public/assets/bel3.jpg',
+        image: '/public/assets/belt2.webp',
         title: 'KIDS BELT',
         subtitle: 'BLACK',
         price: 199,
@@ -159,7 +272,7 @@ export const productData = {
         discount: 50,
       },
       {
-        image: '/public/assets/bel4.jpg',
+        image: '/public/assets/belt1.webp',
         title: 'KIDS BELT',
         subtitle: 'BLACK',
         price: 199,
