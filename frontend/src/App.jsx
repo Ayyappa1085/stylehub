@@ -6,16 +6,35 @@ import Body from './components/Body';
 function App() {
   const [selectedCategory, setSelectedCategory] = useState('Men');
   const [selectedItem, setSelectedItem] = useState('');
+  const [sidebarVisible, setSidebarVisible] = useState(true);
+
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+    setSidebarVisible(true);
+    setSelectedItem('');
+  };
+
+  const handleItemSelect = (item) => {
+    setSelectedItem(item);
+    setSidebarVisible(false);
+  };
 
   return (
     <div className="app-container">
-      <Header onCategorySelect={setSelectedCategory} />
+      <Header onCategorySelect={handleCategorySelect} />
       <div className="main-content">
-        <Sidebar
+        {sidebarVisible ? (
+          <Sidebar
+            selectedCategory={selectedCategory}
+            onItemSelect={handleItemSelect}
+            visible={sidebarVisible}
+          />
+        ) : null}
+        <Body
           selectedCategory={selectedCategory}
-          onItemSelect={setSelectedItem}
+          selectedItem={selectedItem}
+          className={sidebarVisible ? 'body with-sidebar' : 'body'}
         />
-        <Body selectedCategory={selectedCategory} selectedItem={selectedItem} />
       </div>
     </div>
   );

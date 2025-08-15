@@ -7,8 +7,8 @@ const itemsMap = {
   Kids: ['Shirts', 'Pants', 'Belt'],
 };
 
-const Body = ({ selectedCategory, selectedItem }) => (
-  <main className="body">
+const Body = ({ selectedCategory, selectedItem, className }) => (
+  <main className={className}>
     <h2>{selectedCategory} Items</h2>
     {selectedItem === 'Shirts' && <CardList show={true} />}
     {/* Add similar logic for other items */}
