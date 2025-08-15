@@ -2,9 +2,12 @@
   background: #e7e7e7;
   color: #000;
   flex: 1;
-  margin-left: 270px;
   padding: 40px 20px 20px 20px;
   min-height: calc(100vh - 60px);
+}
+
+.with-sidebar {
+  margin-left: 270px;
 }
 
 .items-list {
@@ -31,8 +34,10 @@
 
 @media (max-width: 768px) {
   .body {
-    margin-left: 0;
     padding: 20px 10px;
+  }
+  .with-sidebar {
+    margin-left: 0;
   }
   .items-list {
     flex-direction: column;
