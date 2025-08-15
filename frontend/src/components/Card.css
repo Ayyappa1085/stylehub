@@ -54,10 +54,27 @@
 }
 
 .card-discount {
-  color: #c48d91;
+  color: #d3a892;
   font-size: 0.95em;
 }
 
+.card-actions {
+  display: flex;       
+  align-items: center;
+  gap: 12px;         
+  margin-left: auto;  
+}
+
+.action-icon {
+  font-size: 1.2rem;   
+  color: #000;        
+  cursor: pointer;     
+  transition: color 0.2s ease-in-out; 
+}
+
+.action-icon:hover {
+  color: #d3a892; 
+}
 .card-colors {
   display: flex;
   gap: 6px;

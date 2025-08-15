@@ -9,6 +9,7 @@ const Header = ({ onCategorySelect }) => (
         <li onClick={() => onCategorySelect('Men')}>Men</li>
         <li onClick={() => onCategorySelect('Women')}>Women</li>
         <li onClick={() => onCategorySelect('Kids')}>Kids</li>
+        
       </ul>
     </nav>
 
