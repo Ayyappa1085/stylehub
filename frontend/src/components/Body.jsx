@@ -1,18 +1,24 @@
-import './Body.css';
+
+import { productData } from '../data/productData';
 import CardList from './CardList';
+import "./Body.css"
 
-const itemsMap = {
-  Men: ['Shirts', 'Pants', 'Watches'],
-  Women: ['Sarees', 'Kurtas'],
-  Kids: ['Shirts', 'Pants', 'Belt'],
+const Body = ({ selectedCategory, selectedItem, className }) => {
+  let products = [];
+  if (
+    selectedCategory &&
+    selectedItem &&
+    productData[selectedCategory] &&
+    productData[selectedCategory][selectedItem]
+  ) {
+    products = productData[selectedCategory][selectedItem];
+  }
+  return (
+    <main className={className}>
+      <h2>{selectedCategory} {selectedItem ? `> ${selectedItem}` : 'Items'}</h2>
+      <CardList products={products} />
+    </main>
+  );
 };
-
-const Body = ({ selectedCategory, selectedItem, className }) => (
-  <main className={className}>
-    <h2>{selectedCategory} Items</h2>
-    {selectedItem === 'Shirts' && <CardList show={true} />}
-    {/* Add similar logic for other items */}
-  </main>
-);
 
 export default Body;
