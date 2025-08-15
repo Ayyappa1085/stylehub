@@ -38,7 +38,31 @@ export const productData = {
     ],
     Pants: [
       {
-        image: '/public/assets/pant2.webp',
+        image: '/public/assets/pant14.webp',
+        title: 'SLIM FIT PANTS',
+        subtitle: 'BLACK',
+        price: 1299,
+        oldPrice: 1999,
+        discount: 35,
+      },
+      {
+        image: '/public/assets/pant11.avif',
+        title: 'SLIM FIT PANTS',
+        subtitle: 'BLACK',
+        price: 1299,
+        oldPrice: 1999,
+        discount: 35,
+      },
+      {
+        image: '/public/assets/pant12.webp',
+        title: 'SLIM FIT PANTS',
+        subtitle: 'BLACK',
+        price: 1299,
+        oldPrice: 1999,
+        discount: 35,
+      },
+      {
+        image: '/public/assets/pant13.webp',
         title: 'SLIM FIT PANTS',
         subtitle: 'BLACK',
         price: 1299,
@@ -48,7 +72,7 @@ export const productData = {
     ],
     Watches: [
       {
-        image: '/public/assets/wat1.jpg',
+        image: '/public/assets/wat11.webp',
         title: 'CLASSIC WATCH',
         subtitle: 'SILVER',
         price: 2999,
@@ -56,7 +80,7 @@ export const productData = {
         discount: 40,
       },
       {
-        image: '/public/assets/wat2.jpg',
+        image: '/public/assets/wat14.webp',
         title: 'CLASSIC WATCH',
         subtitle: 'SILVER',
         price: 2999,
@@ -64,7 +88,7 @@ export const productData = {
         discount: 40,
       },
       {
-        image: '/public/assets/wat3.jpg',
+        image: '/public/assets/wat12.webp',
         title: 'CLASSIC WATCH',
         subtitle: 'SILVER',
         price: 2999,
@@ -72,15 +96,7 @@ export const productData = {
         discount: 40,
       },
       {
-        image: '/public/assets/wat4.jpg',
-        title: 'CLASSIC WATCH',
-        subtitle: 'SILVER',
-        price: 2999,
-        oldPrice: 4999,
-        discount: 40,
-      },
-      {
-        image: '/public/assets/wat5.jpg',
+        image: '/public/assets/wat13.webp',
         title: 'CLASSIC WATCH',
         subtitle: 'SILVER',
         price: 2999,
@@ -93,17 +109,65 @@ export const productData = {
   Women: {
     Sarees: [
       {
-        image: '/public/assets/shirt1.webp',
+        image: '/public/assets/saree1.avif',
         title: 'SILK SAREE',
         subtitle: 'RED',
         price: 2499,
         oldPrice: 3999,
         discount: 38,
       },
+      {
+        image: '/public/assets/saree2.avif',
+        title: 'SILK SAREE',
+        subtitle: 'RED',
+        price: 2499,
+        oldPrice: 3999,
+        discount: 38,
+      },
+      {
+        image: '/public/assets/saree3.avif',
+        title: 'SILK SAREE',
+        subtitle: 'RED',
+        price: 2499,
+        oldPrice: 3999,
+        discount: 38,
+      },
+      {
+        image: '/public/assets/saree4.avif',
+        title: 'SILK SAREE',
+        subtitle: 'RED',
+        price: 2499,
+        oldPrice: 3999,
+        discount: 38,
+      },
+      
+
     ],
     Kurtas: [
       {
-        image: '/public/assets/shirt1.webp',
+        image: '/public/assets/kurta1.avif',
+        title: 'COTTON KURTA',
+        subtitle: 'BLUE',
+        price: 999,
+        oldPrice: 1599,
+        discount: 37,
+      },
+      {
+        image: '/public/assets/kurta4.avif',
+        title: 'COTTON KURTA',
+        subtitle: 'BLUE',
+        price: 999,
+        oldPrice: 1599,
+        discount: 37,
+      },{
+        image: '/public/assets/kurta3.avif',
+        title: 'COTTON KURTA',
+        subtitle: 'BLUE',
+        price: 999,
+        oldPrice: 1599,
+        discount: 37,
+      },{
+        image: '/public/assets/kurta2.avif',
         title: 'COTTON KURTA',
         subtitle: 'BLUE',
         price: 999,
@@ -174,14 +238,6 @@ export const productData = {
         discount: 40,
       },
       {
-        image: '/public/assets/bp14.avif',
-        title: 'KIDS PANTS',
-        subtitle: 'GREEN',
-        price: 599,
-        oldPrice: 999,
-        discount: 40,
-      },
-      {
         image: '/public/assets/bp15.avif',
         title: 'KIDS PANTS',
         subtitle: 'GREEN',
@@ -192,7 +248,31 @@ export const productData = {
     ],
     Belt: [
       {
-        image: '/public/assets/shirt1.webp',
+        image: '/public/assets/belt1.webp',
+        title: 'KIDS BELT',
+        subtitle: 'BLACK',
+        price: 199,
+        oldPrice: 399,
+        discount: 50,
+      },
+      {
+        image: '/public/assets/belt3.webp',
+        title: 'KIDS BELT',
+        subtitle: 'BLACK',
+        price: 199,
+        oldPrice: 399,
+        discount: 50,
+      },
+      {
+        image: '/public/assets/belt2.webp',
+        title: 'KIDS BELT',
+        subtitle: 'BLACK',
+        price: 199,
+        oldPrice: 399,
+        discount: 50,
+      },
+      {
+        image: '/public/assets/belt1.webp',
         title: 'KIDS BELT',
         subtitle: 'BLACK',
         price: 199,
