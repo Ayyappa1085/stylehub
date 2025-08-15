@@ -11,7 +11,7 @@ const shirtsData = [
     discount: 43,
   },
   {
-    image: '../assets/shirt1.webp',
+    image: '../assets/shirt2.webp',
     title: 'ABSTRACT PRINT SHIRT',
     subtitle: 'PAINTER - GREEN',
     oldPrice: 3199,
@@ -19,7 +19,7 @@ const shirtsData = [
     discount: 51,
   },
   {
-    image: '../assets/shirt1.webp',
+    image: '../assets/shirt3.webp',
     title: 'LINEN BLEND TURKISH 3 ...',
     subtitle: 'THRONE LS-25 - TEAL',
     oldPrice: 3999,
@@ -27,7 +27,23 @@ const shirtsData = [
     discount: 30,
   },
   {
+    image: '../assets/shirt4.webp',
+    title: 'TONAL CHECK SHIRT',
+    subtitle: 'SANTHE - MAROON',
+    oldPrice: 3999,
+    price: 1959,
+    discount: 51,
+  },
+    {
     image: '../assets/shirt1.webp',
+    title: 'TONAL CHECK SHIRT',
+    subtitle: 'SANTHE - MAROON',
+    oldPrice: 3999,
+    price: 1959,
+    discount: 51,
+  },
+    {
+    image: '../assets/shirt2.webp',
     title: 'TONAL CHECK SHIRT',
     subtitle: 'SANTHE - MAROON',
     oldPrice: 3999,
