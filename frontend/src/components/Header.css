@@ -42,6 +42,17 @@
   font-weight: bold;
 }
 
+/* Active nav item styles */
+.active-nav {
+  color: #d3a892 !important;
+  border-bottom: 2px solid #d3a892;
+  background: none !important;
+  font-weight: bold;
+}
+.active-home {
+  color: #d3a892 !important;
+}
+
 /* Header right nav icon hover (SVG) */
 .nav-right ul li:hover svg {
   color: #d3a892;

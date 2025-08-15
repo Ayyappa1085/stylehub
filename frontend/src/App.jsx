@@ -1,9 +1,13 @@
 import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import Body from './components/Body';
-import Footer from './components/Footer';
-import ServiceFeatures from './components/ServiceFeatures';
+
+import Home from './pages/Home';
+import Men from './pages/Men';
+import Women from './pages/Women';
+import Kids from './pages/Kids';
+import Watches from './pages/Watches';
+
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState('Men');
@@ -16,31 +20,22 @@ function App() {
     setSelectedItem('');
   };
 
-  const handleItemSelect = (item) => {
-    setSelectedItem(item);
-    setSidebarVisible(false);
-  };
+ 
 
   return (
-    <div className="app-container">
+    <Router>
       <Header onCategorySelect={handleCategorySelect} />
-      <div className="main-content">
-        {sidebarVisible ? (
-          <Sidebar
-            selectedCategory={selectedCategory}
-            onItemSelect={handleItemSelect}
-            visible={sidebarVisible}
-          />
-        ) : null}
-        <Body
-          selectedCategory={selectedCategory}
-          selectedItem={selectedItem}
-          className={sidebarVisible ? 'body with-sidebar' : 'body'}
-        />
-      </div>
-      
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/men" element={<Men />} />
+        <Route path="/women" element={<Women />} />
+        <Route path="/kids" element={<Kids />} />
+        <Route path="/Watches" element={<Watches />} />
+
+      </Routes>
+    </Router>
   );
 }
+
 
 export default App;

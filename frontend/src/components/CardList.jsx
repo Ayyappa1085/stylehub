@@ -11,4 +11,5 @@ const CardList = ({ products }) => {
   );
 };
 
+
 export default CardList;
