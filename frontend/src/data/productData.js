@@ -1,5 +1,7 @@
 // Product data for Men, Women, Kids
 
+import Watches from "../pages/Watches";
+
 export const productData = {
   Men: {
     Shirts: [
@@ -70,41 +72,9 @@ export const productData = {
         discount: 35,
       },
     ],
-    Watches: [
-      {
-        image: '/public/assets/wat11.webp',
-        title: 'CLASSIC WATCH',
-        subtitle: 'SILVER',
-        price: 2999,
-        oldPrice: 4999,
-        discount: 40,
-      },
-      {
-        image: '/public/assets/wat14.webp',
-        title: 'CLASSIC WATCH',
-        subtitle: 'SILVER',
-        price: 2999,
-        oldPrice: 4999,
-        discount: 40,
-      },
-      {
-        image: '/public/assets/wat12.webp',
-        title: 'CLASSIC WATCH',
-        subtitle: 'SILVER',
-        price: 2999,
-        oldPrice: 4999,
-        discount: 40,
-      },
-      {
-        image: '/public/assets/wat13.webp',
-        title: 'CLASSIC WATCH',
-        subtitle: 'SILVER',
-        price: 2999,
-        oldPrice: 4999,
-        discount: 40,
-      },
+    
       
-    ],
+    
   },
   Women: {
     Sarees: [
@@ -281,4 +251,41 @@ export const productData = {
       },
     ],
   },
+  Watches: {
+    Analog: [
+      {
+        image: '/public/assets/wat11.webp',
+        title: 'CLASSIC WATCH',
+        subtitle: 'SILVER',
+        price: 2999,
+        oldPrice: 4999,
+        discount: 40,
+      },
+      {
+        image: '/public/assets/wat14.webp',
+        title: 'CLASSIC WATCH',
+        subtitle: 'SILVER',
+        price: 2999,
+        oldPrice: 4999,
+        discount: 40,
+      },
+      {
+        image: '/public/assets/wat12.webp',
+        title: 'CLASSIC WATCH',
+        subtitle: 'SILVER',
+        price: 2999,
+        oldPrice: 4999,
+        discount: 40,
+      },
+      {
+        image: '/public/assets/wat13.webp',
+        title: 'CLASSIC WATCH',
+        subtitle: 'SILVER',
+        price: 2999,
+        oldPrice: 4999,
+        discount: 40,
+      },
+      
+    ],
+},
 };
