@@ -52,13 +52,54 @@ export const productData = {
   Women: {
     Sarees: [
       {
-        image: '/public/assets/shirt1.webp',
+        image: '/public/assets/sarees1.jpg',
         title: 'SILK SAREE',
         subtitle: 'RED',
         price: 2499,
         oldPrice: 3999,
         discount: 38,
       },
+      {
+        image: '/public/assets/saree2.jpg',
+        title: 'SILK SAREE',
+        subtitle: 'RED',
+        price: 2499,
+        oldPrice: 3999,
+        discount: 38,
+      },
+      {
+        image: '/public/assets/saree3.jpg',
+        title: 'SILK SAREE',
+        subtitle: 'RED',
+        price: 2499,
+        oldPrice: 3999,
+        discount: 38,
+      },
+      {
+        image: '/public/assets/saree4.jpg',
+        title: 'SILK SAREE',
+        subtitle: 'RED',
+        price: 2499,
+        oldPrice: 3999,
+        discount: 38,
+      },
+      {
+        image: '/public/assets/saree5.webp',
+        title: 'SILK SAREE',
+        subtitle: 'RED',
+        price: 2499,
+        oldPrice: 3999,
+        discount: 38,
+      },
+      {
+        image: '/public/assets/saree6.jpg',
+        title: 'SILK SAREE',
+        subtitle: 'RED',
+        price: 2499,
+        oldPrice: 3999,
+        discount: 38,
+      },
+
     ],
     Kurtas: [
       {
@@ -94,7 +135,31 @@ export const productData = {
     ],
     Belt: [
       {
-        image: '/public/assets/shirt1.webp',
+        image: '/public/assets/bel1.jpg',
+        title: 'KIDS BELT',
+        subtitle: 'BLACK',
+        price: 199,
+        oldPrice: 399,
+        discount: 50,
+      },
+      {
+        image: '/public/assets/bel2.jpg',
+        title: 'KIDS BELT',
+        subtitle: 'BLACK',
+        price: 199,
+        oldPrice: 399,
+        discount: 50,
+      },
+      {
+        image: '/public/assets/bel3.jpg',
+        title: 'KIDS BELT',
+        subtitle: 'BLACK',
+        price: 199,
+        oldPrice: 399,
+        discount: 50,
+      },
+      {
+        image: '/public/assets/bel4.jpg',
         title: 'KIDS BELT',
         subtitle: 'BLACK',
         price: 199,
