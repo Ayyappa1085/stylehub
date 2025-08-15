@@ -1,5 +1,7 @@
 // Product data for Men, Women, Kids
 
+import Watches from "../pages/Watches";
+
 export const productData = {
   Men: {
     Shirts: [
@@ -70,6 +72,42 @@ export const productData = {
         discount: 35,
       },
     ],
+     Belt: [
+      {
+        image: '/public/assets/belt1.webp',
+        title: 'KIDS BELT',
+        subtitle: 'BLACK',
+        price: 199,
+        oldPrice: 399,
+        discount: 50,
+      },
+      {
+        image: '/public/assets/belt3.webp',
+        title: 'KIDS BELT',
+        subtitle: 'BLACK',
+        price: 199,
+        oldPrice: 399,
+        discount: 50,
+      },
+      {
+        image: '/public/assets/belt2.webp',
+        title: 'KIDS BELT',
+        subtitle: 'BLACK',
+        price: 199,
+        oldPrice: 399,
+        discount: 50,
+      },
+      {
+        image: '/public/assets/belt1.webp',
+        title: 'KIDS BELT',
+        subtitle: 'BLACK',
+        price: 199,
+        oldPrice: 399,
+        discount: 50,
+      },
+    ],
+    
+      
     
   },
   Women: {
@@ -212,43 +250,10 @@ export const productData = {
         discount: 40,
       },
     ],
-    Belt: [
-      {
-        image: '/public/assets/belt1.webp',
-        title: 'KIDS BELT',
-        subtitle: 'BLACK',
-        price: 199,
-        oldPrice: 399,
-        discount: 50,
-      },
-      {
-        image: '/public/assets/belt3.webp',
-        title: 'KIDS BELT',
-        subtitle: 'BLACK',
-        price: 199,
-        oldPrice: 399,
-        discount: 50,
-      },
-      {
-        image: '/public/assets/belt2.webp',
-        title: 'KIDS BELT',
-        subtitle: 'BLACK',
-        price: 199,
-        oldPrice: 399,
-        discount: 50,
-      },
-      {
-        image: '/public/assets/belt1.webp',
-        title: 'KIDS BELT',
-        subtitle: 'BLACK',
-        price: 199,
-        oldPrice: 399,
-        discount: 50,
-      },
-    ],
+   
   },
-  Watches:{
-    Watches: [
+  Watches: {
+    Analog: [
       {
         image: '/public/assets/wat11.webp',
         title: 'CLASSIC WATCH',
@@ -283,5 +288,5 @@ export const productData = {
       },
       
     ],
-  }
+},
 };
