@@ -2,9 +2,9 @@
 import './Sidebar.css';
 
 const itemsMap = {
-  Men: ['Shirts', 'Pants'],
+  Men: ['Shirts', 'Pants','Belt'],
   Women: ['Sarees', 'Kurtas'],
-  Kids: ['Shirts', 'Pants', 'Belt'],
+  Kids: ['Shirts', 'Pants'],
   Watches: ['Analog'],
 };
 
