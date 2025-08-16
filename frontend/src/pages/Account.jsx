@@ -9,7 +9,7 @@ const Account = () => {
   const [message, setMessage] = useState('');
 
   return (
-    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '80vh'}}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '80vh' }}>
       <h2>Account</h2>
       <div style={{display: 'flex', gap: '24px', margin: '32px 0'}}>
         <button

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './LoginModal.css';
-import loginImg from '../assets/logo2.png';
+import loginImg from '../assets/png.png';
 
 const LoginModal = ({ open, onClose, onSignup, onLoginSuccess }) => {
   const [form, setForm] = useState({ email: '', password: '' });
@@ -41,20 +41,22 @@ const LoginModal = ({ open, onClose, onSignup, onLoginSuccess }) => {
         <div className="login-modal-img">
           <img src={loginImg} alt="Login visual" />
         </div>
+
         <div className="login-modal-form">
           <button className="login-close" onClick={onClose}>&times;</button>
+          <h3 className="login-quote">Wear Your Confidence</h3>
           <form className="login-form" onSubmit={handleSubmit}>
             <div className="login-input-group">
-              <span className="login-country">Email</span>
               <input name="email" type="email" placeholder="Enter email" value={form.email} onChange={handleChange} required />
             </div>
             <div className="login-input-group">
-              <span className="login-country">Password</span>
               <input name="password" type="password" placeholder="Enter password" value={form.password} onChange={handleChange} required />
             </div>
             {error && <div style={{color: 'red', textAlign: 'center'}}>{error}</div>}
             <button type="submit" className="login-submit">Submit</button>
           </form>
+
+          {/* Signup Link */}
           <div className="login-links">
             <span>Don’t have an account? </span>
             <button className="signup-link" onClick={onSignup} style={{background: 'none', border: 'none', color: '#d3a892', cursor: 'pointer'}}>Sign up</button>

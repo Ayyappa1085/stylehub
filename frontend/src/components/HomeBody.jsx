@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const images = [
   { src: '/assets/men.png', route: '/men' },
   { src: '/assets/img11-min.png', route: '/women' },
-  { src: '/assets/watchM.png', route: '/Kids' },
+  { src: '/assets/watchM.png', route: '/kids' },
   { src: '/assets/boy.png', route: '/watches' },
 ];
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./ImageScroller.css";
 
 const images = [
-  "/assets/menS.jpg",
+  "/assets/shirtS.png",
   "/assets/womenS.jpg",
   "/assets/kidsS.jpg",
   "/assets/watchS.jpg",

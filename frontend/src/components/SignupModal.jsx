@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './LoginModal.css';
-import loginImg from '../assets/logo2.png';
+import loginImg from '../assets/png.png';
 
 const SignupModal = ({ open, onClose }) => {
   const [form, setForm] = useState({
@@ -47,29 +47,24 @@ const SignupModal = ({ open, onClose }) => {
         </div>
         <div className="login-modal-form">
           <button className="login-close" onClick={onClose}>&times;</button>
+         
           <form className="login-form" onSubmit={handleSubmit}>
             <div className="login-input-group">
-              <span className="login-country">Name</span>
               <input name="name" type="text" placeholder="Enter name" value={form.name} onChange={handleChange} required />
             </div>
             <div className="login-input-group">
-              <span className="login-country">Mobile</span>
               <input name="mobile" type="tel" placeholder="Enter mobile" value={form.mobile} onChange={handleChange} required />
             </div>
             <div className="login-input-group">
-              <span className="login-country">Email</span>
               <input name="email" type="email" placeholder="Enter email" value={form.email} onChange={handleChange} required />
             </div>
             <div className="login-input-group">
-              <span className="login-country">Password</span>
               <input name="password" type="password" placeholder="Enter password" value={form.password} onChange={handleChange} required />
             </div>
             <div className="login-input-group">
-              <span className="login-country">Confirm Password</span>
               <input name="confirmPassword" type="password" placeholder="Confirm password" value={form.confirmPassword} onChange={handleChange} required />
             </div>
             <div className="login-input-group">
-              <span className="login-country">Address</span>
               <input name="address" type="text" placeholder="Enter address" value={form.address} onChange={handleChange} required />
             </div>
             {error && <div style={{color: 'red', textAlign: 'center'}}>{error}</div>}

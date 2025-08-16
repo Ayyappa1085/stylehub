@@ -68,6 +68,7 @@
   background: #f5f5f5;
   border-radius: 6px;
   padding: 8px 12px;
+  border: 1px solid #ddd;
 }
 
 .login-country {
@@ -75,20 +76,19 @@
   color: #333;
 }
 
-.login-form input[type="email"] {
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="password"],
+.login-form input[type="tel"] {
   border: none;
   background: transparent;
   font-size: 1em;
   outline: none;
   flex: 1;
+  padding: 6px 0; /* optional: for better spacing */
 }
-.login-form input[type="password"] {
-  border: none;
-  background: transparent;
-  font-size: 1em;
-  outline: none;
-  flex: 1;
-}
+
+
 
 .login-checkbox {
   font-size: 0.98em;
@@ -125,6 +125,9 @@
   color: #888;
   text-decoration: underline;
   margin: 0 4px;
+}
+.login-links a:hover {
+  color: #d3a892;
 }
 
 .login-modal-flex {
@@ -163,4 +166,31 @@
   background: #fff;
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
+}
+.login-quote {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333; 
+  font-family: 'Playfair Display','Poppins', sans-serif;
+}
+.login-input-group input {
+  flex: 1;
+  min-width: 0;        /* prevents shrinking to zero */
+  position: relative;
+  z-index: 2;          /* keeps input above spans */
+  color: #333;
+}
+
+.login-input-group input::placeholder {
+  color: #888;
+}
+.login-quote {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333; /* Adjust based on your theme */
+  font-family: 'Poppins', sans-serif;
 }
