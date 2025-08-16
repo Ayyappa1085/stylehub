@@ -1,0 +1,57 @@
+.scroller-container {
+  width: 80%;
+  height: 400px; /* adjust height as needed */
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* smooth animation */
+}
+
+.scroller-container:hover {
+  transform: scale(1.05);         /* enlarge slightly */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* add shadow when hovered */
+}
+
+.scroller-track {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.scroller-item {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroller-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dots */
+.scroller-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #ff6600;
+}

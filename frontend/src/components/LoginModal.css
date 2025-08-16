@@ -1,0 +1,141 @@
+.login-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.15);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-modal {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+  padding: 40px 32px 32px 32px;
+  min-width: 340px;
+  max-width: 90vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.login-form {
+  width: 100%;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login-input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f5f5f5;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.login-country {
+  font-size: 1.1em;
+  color: #333;
+}
+
+.login-form input[type="tel"] {
+  border: none;
+  background: transparent;
+  font-size: 1em;
+  outline: none;
+  flex: 1;
+}
+
+.login-checkbox {
+  font-size: 0.98em;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-submit {
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  font-size: 1.1em;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 8px;
+  transition: background 0.2s;
+}
+.login-submit:hover {
+  background: #d3a892;
+  color: #000;
+}
+
+.login-links {
+  margin-top: 18px;
+  font-size: 0.95em;
+  color: #888;
+  text-align: center;
+}
+.login-links a {
+  color: #888;
+  text-decoration: underline;
+  margin: 0 4px;
+}
+
+.login-modal-flex {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  min-width: 700px;
+  max-width: 90vw;
+  padding: 0;
+}
+
+.login-modal-img {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  overflow: hidden;
+}
+.login-modal-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 400px;
+}
+
+.login-modal-form {
+  flex: 1;
+  padding: 40px 32px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background: #fff;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
