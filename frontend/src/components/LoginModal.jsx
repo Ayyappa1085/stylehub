@@ -1,9 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './LoginModal.css';
-import loginImg from '../assets/logo2.png'; // Add your image to assets folder
+import loginImg from '../assets/logo2.png';
 
-const LoginModal = ({ open, onClose }) => {
+const LoginModal = ({ open, onClose, onSignup, onLoginSuccess }) => {
+  const [form, setForm] = useState({ email: '', password: '' });
+  const [error, setError] = useState('');
   if (!open) return null;
+
+  const handleChange = e => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    setError('');
+    if (!form.email || !form.password) {
+      setError('Please enter both email and password.');
+      return;
+    }
+    try {
+      const res = await fetch('http://localhost:5000/api/users/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form)
+      });
+      const data = await res.json();
+      if (!res.ok) setError(data.error || 'Login failed');
+      else {
+        setError('');
+        onLoginSuccess(data.user);
+      }
+    } catch (err) {
+      setError('Unable to connect to server.');
+    }
+  };
+
   return (
     <div className="login-modal-overlay">
       <div className="login-modal login-modal-flex">
@@ -12,19 +43,21 @@ const LoginModal = ({ open, onClose }) => {
         </div>
         <div className="login-modal-form">
           <button className="login-close" onClick={onClose}>&times;</button>
-          <h2>LET'S GET RARE !</h2>
-          <form className="login-form">
+          <form className="login-form" onSubmit={handleSubmit}>
             <div className="login-input-group">
-              <span className="login-country">🇮🇳 +91</span>
-              <input type="tel" placeholder="Enter Mobile Number" maxLength={10} required />
+              <span className="login-country">Email</span>
+              <input name="email" type="email" placeholder="Enter email" value={form.email} onChange={handleChange} required />
             </div>
-            <label className="login-checkbox">
-              <input type="checkbox" /> Notify me for Updates and Offers
-            </label>
+            <div className="login-input-group">
+              <span className="login-country">Password</span>
+              <input name="password" type="password" placeholder="Enter password" value={form.password} onChange={handleChange} required />
+            </div>
+            {error && <div style={{color: 'red', textAlign: 'center'}}>{error}</div>}
             <button type="submit" className="login-submit">Submit</button>
           </form>
           <div className="login-links">
-            <a href="#">Privacy Policy and T&amp;Cs</a> | <a href="#">Help Center</a>
+            <span>Don’t have an account? </span>
+            <button className="signup-link" onClick={onSignup} style={{background: 'none', border: 'none', color: '#d3a892', cursor: 'pointer'}}>Sign up</button>
           </div>
         </div>
       </div>

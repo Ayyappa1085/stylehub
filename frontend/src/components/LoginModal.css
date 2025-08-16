@@ -27,13 +27,31 @@
 
 .login-close {
   position: absolute;
-  top: 18px;
-  right: 18px;
-  background: none;
-  border: none;
-  font-size: 2em;
+  top: -12px;   /* push outside padding */
+  right: -12px; /* move more to the corner */
+  background: #e7e7e7;
+  border: 2px solid #ccc;
+  
+  width: 32px;
+  height: 32px;
+  font-size: 1.2em;
+  font-weight: bold;
   cursor: pointer;
+  color: #333;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
 }
+
+.login-close:hover {
+  background: #d3a892;
+  color: #fff;
+  border-color: #d3a892;
+}
+
+
 
 .login-form {
   width: 100%;
@@ -57,7 +75,14 @@
   color: #333;
 }
 
-.login-form input[type="tel"] {
+.login-form input[type="email"] {
+  border: none;
+  background: transparent;
+  font-size: 1em;
+  outline: none;
+  flex: 1;
+}
+.login-form input[type="password"] {
   border: none;
   background: transparent;
   font-size: 1em;
