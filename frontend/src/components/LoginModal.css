@@ -76,20 +76,19 @@
   color: #333;
 }
 
-.login-form input[type="email"] {
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="password"],
+.login-form input[type="tel"] {
   border: none;
   background: transparent;
   font-size: 1em;
   outline: none;
   flex: 1;
+  padding: 6px 0; /* optional: for better spacing */
 }
-.login-form input[type="password"] {
-  border: none;
-  background: transparent;
-  font-size: 1em;
-  outline: none;
-  flex: 1;
-}
+
+
 
 .login-checkbox {
   font-size: 0.98em;
@@ -186,4 +185,12 @@
 
 .login-input-group input::placeholder {
   color: #888;
+}
+.login-quote {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333; /* Adjust based on your theme */
+  font-family: 'Poppins', sans-serif;
 }
