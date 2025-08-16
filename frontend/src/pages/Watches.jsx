@@ -1,18 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import Body from '../components/Body';
 
 const Watches = () => {
   const [selectedItem, setSelectedItem] = useState('');
   const [sidebarVisible, setSidebarVisible] = useState(true);
+  const location = useLocation();
 
   const handleItemSelect = (item) => {
     setSelectedItem(item);
     setSidebarVisible(false);
   };
 
+  useEffect(() => {
+    setSelectedItem('');
+    setSidebarVisible(true);
+  }, [location.key]);
+
   return (
-    <div className="main-content">
+    <div className="main-content" key={location.key}>
       {sidebarVisible && (
         <Sidebar selectedCategory="Watches" onItemSelect={handleItemSelect} visible={true} />
       )}

@@ -50,7 +50,7 @@ const Header = () => {
           </li>
           <li title="Wishlist"><FaHeart /></li>
           <li title="Cart"><FaCartPlus /></li>
-          <li title="Account"><FaUser /></li>
+          <li title="Account" onClick={() => navigate('/account')}><FaUser /></li>
         </ul>
       </nav>
     </header>
