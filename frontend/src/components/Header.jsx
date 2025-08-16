@@ -24,8 +24,8 @@ const Header = () => {
             onClick={() => navigate('/kids')}
           >Kids</li>
           <li
-            className={path === '/Watches' ? 'active-nav' : ''}
-            onClick={() => navigate('/Watches')}
+            className={path === '/watches' ? 'active-nav' : ''}
+            onClick={() => navigate('/watches')}
           >Watches</li>
         </ul>
       </nav>

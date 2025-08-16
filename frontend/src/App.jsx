@@ -32,8 +32,7 @@ function App() {
         <Route path="/women" element={<Women />} />
         <Route path="/kids" element={<Kids />} />
         <Route path="/account" element={<Account />} />
-        <Route path="/Watches" element={<Watches />} />
-
+        <Route path="/watches" element={<Watches />} />
       </Routes>
     </Router>
   );
