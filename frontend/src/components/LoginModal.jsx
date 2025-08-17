@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import './LoginModal.css';
 import loginImg from '../assets/png.png';
+import SignupModal from './SignupModal';
 
-const LoginModal = ({ open, onClose, onSignup, onLoginSuccess }) => {
+const LoginModal = ({ open, onClose, onLoginSuccess }) => {
   const [form, setForm] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
+  const [showSignup, setShowSignup] = useState(false); // toggle signup modal
+
   if (!open) return null;
 
   const handleChange = e => {
@@ -22,18 +25,35 @@ const LoginModal = ({ open, onClose, onSignup, onLoginSuccess }) => {
       const res = await fetch('http://localhost:5000/api/users/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form)
+        body: JSON.stringify(form),
+        credentials: 'include', // keep cookies
       });
       const data = await res.json();
       if (!res.ok) setError(data.error || 'Login failed');
       else {
-        setError('');
-        onLoginSuccess(data.user);
+        onLoginSuccess(data.user); // server returns { user }
       }
     } catch (err) {
       setError('Unable to connect to server.');
     }
   };
+
+  // If signup is toggled, show SignupModal instead of LoginModal
+  if (showSignup) {
+    return (
+      <SignupModal
+        open={showSignup}
+        onClose={() => {
+          setShowSignup(false);
+          onClose(); // close completely if user cancels
+        }}
+        onSignupSuccess={(newUser) => {
+          onLoginSuccess(newUser); // log them in immediately after signup
+          setShowSignup(false);
+        }}
+      />
+    );
+  }
 
   return (
     <div className="login-modal-overlay">
@@ -47,19 +67,38 @@ const LoginModal = ({ open, onClose, onSignup, onLoginSuccess }) => {
           <h3 className="login-quote">Wear Your Confidence</h3>
           <form className="login-form" onSubmit={handleSubmit}>
             <div className="login-input-group">
-              <input name="email" type="email" placeholder="Enter email" value={form.email} onChange={handleChange} required />
+              <input
+                name="email"
+                type="email"
+                placeholder="Enter email"
+                value={form.email}
+                onChange={handleChange}
+                required
+              />
             </div>
             <div className="login-input-group">
-              <input name="password" type="password" placeholder="Enter password" value={form.password} onChange={handleChange} required />
+              <input
+                name="password"
+                type="password"
+                placeholder="Enter password"
+                value={form.password}
+                onChange={handleChange}
+                required
+              />
             </div>
-            {error && <div style={{color: 'red', textAlign: 'center'}}>{error}</div>}
+            {error && <div style={{ color: 'red', textAlign: 'center' }}>{error}</div>}
             <button type="submit" className="login-submit">Submit</button>
           </form>
 
-          {/* Signup Link */}
           <div className="login-links">
             <span>Don’t have an account? </span>
-            <button className="signup-link" onClick={onSignup} style={{background: 'none', border: 'none', color: '#d3a892', cursor: 'pointer'}}>Sign up</button>
+            <button
+              className="signup-link"
+              onClick={() => setShowSignup(true)}
+              style={{ background: 'none', border: 'none', color: '#d3a892', cursor: 'pointer' }}
+            >
+              Sign up
+            </button>
           </div>
         </div>
       </div>

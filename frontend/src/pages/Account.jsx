@@ -1,53 +1,97 @@
-import { useState } from 'react';
-import LoginModal from '../components/LoginModal';
-import SignupModal from '../components/SignupModal';
+import React, { useEffect, useState, useContext } from "react";
+import { UserContext } from "../App";
 
 const Account = () => {
-  const [showLogin, setShowLogin] = useState(false);
-  const [showSignup, setShowSignup] = useState(false);
-  const [user, setUser] = useState(null);
-  const [message, setMessage] = useState('');
+  const { user, setUser } = useContext(UserContext);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  // Re-hydrate user on refresh using session cookie
+  useEffect(() => {
+    const fetchUser = async () => {
+      try {
+        setLoading(true);
+        setError("");
+        const res = await fetch("http://localhost:5000/api/users/me", {
+          method: "GET",
+          credentials: "include",
+        });
+        if (!res.ok) {
+          setUser(null);
+          setError("Not logged in");
+        } else {
+          const data = await res.json();
+          // /me returns { user: {...} }
+          setUser(data.user);
+        }
+      } catch (e) {
+        console.error(e);
+        setError("Unable to connect to server");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (!user) fetchUser();
+    else setLoading(false);
+  }, [user, setUser]);
+
+  const handleLogout = async () => {
+    try {
+      await fetch("http://localhost:5000/api/users/logout", {
+        method: "POST",
+        credentials: "include",
+      });
+    } catch (e) {
+      // ignore network errors here
+    } finally {
+      setUser(null);
+    }
+  };
+
+  if (loading) return <p>Loading...</p>;
+  if (!user) return <p>You are not logged in.</p>;
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '80vh' }}>
-      <h2>Account</h2>
-      <div style={{display: 'flex', gap: '24px', margin: '32px 0'}}>
-        <button
-          style={{background: '#d3a892', color: '#fff', border: 'none', borderRadius: '6px', padding: '12px 32px', fontSize: '1.1em', cursor: 'pointer'}}
-          onClick={() => setShowLogin(true)}
-        >Login</button>
-        <button
-          style={{background: '#222', color: '#fff', border: 'none', borderRadius: '6px', padding: '12px 32px', fontSize: '1.1em', cursor: 'pointer'}}
-          onClick={() => setShowSignup(true)}
-        >Sign Up</button>
+    <div style={{ padding: "20px" }}>
+      <h2>My Account</h2>
+      <p><strong>Name:</strong> {user.name}</p>
+      <p><strong>Email:</strong> {user.email}</p>
+      <p><strong>Mobile:</strong> {user.mobile}</p>
+      <p><strong>Address:</strong> {user.address}</p>
+
+      <div style={{ marginTop: 16 }}>
+        <h3>Likes</h3>
+        {Array.isArray(user.likes) && user.likes.length > 0 ? (
+          <ul>
+            {user.likes.map((p, idx) => (
+              <li key={idx}>{typeof p === 'string' ? p : p.title || p.id}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>No liked items</p>
+        )}
       </div>
-      {message && <div style={{color: 'green', fontWeight: 'bold', marginBottom: '24px'}}>{message}</div>}
-      {user && (
-        <div style={{background: '#fff', borderRadius: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', padding: '32px', minWidth: '320px'}}>
-          <h3>User Details</h3>
-          <div><strong>Name:</strong> {user.name}</div>
-          <div><strong>Email:</strong> {user.email}</div>
-          <div><strong>Mobile:</strong> {user.mobile}</div>
-          <div><strong>Address:</strong> {user.address}</div>
-        </div>
-      )}
-      <LoginModal
-        open={showLogin}
-        onClose={() => setShowLogin(false)}
-        onSignup={() => {
-          setShowLogin(false);
-          setShowSignup(true);
-        }}
-        onLoginSuccess={(userData) => {
-          setShowLogin(false);
-          setUser(userData);
-          setMessage('Login successful!');
-        }}
-      />
-      <SignupModal
-        open={showSignup}
-        onClose={() => setShowSignup(false)}
-      />
+
+      <div style={{ marginTop: 16 }}>
+        <h3>Cart</h3>
+        {Array.isArray(user.cart) && user.cart.length > 0 ? (
+          <ul>
+            {user.cart.map((p, idx) => (
+              <li key={idx}>{typeof p === 'string' ? p : p.title || p.id}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>Your cart is empty</p>
+        )}
+      </div>
+
+      <button
+        onClick={handleLogout}
+        style={{ marginTop: 24, padding: "10px 16px", cursor: "pointer" }}
+      >
+        Logout
+      </button>
     </div>
   );
 };

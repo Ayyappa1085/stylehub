@@ -1,0 +1,14 @@
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  flex: 2; /* Takes more space compared to Checkout */
+}
+
+.cart-list h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
