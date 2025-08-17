@@ -1,0 +1,15 @@
+.cart-container {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.cart-left {
+  flex: 2;
+}
+
+.cart-right {
+  flex: 1;
+  position: sticky;
+  top: 100px;
+}

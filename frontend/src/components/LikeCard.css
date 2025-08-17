@@ -1,0 +1,67 @@
+.like-card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+  margin-bottom: 16px;
+}
+
+.like-card:hover {
+  transform: scale(1.02);
+}
+
+.like-card-img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 16px;
+}
+
+.like-card-details {
+  flex: 1;
+}
+
+.like-card-details h3 {
+  font-size: 16px;
+  margin: 0 0 4px 0;
+  color: #222;
+}
+
+.like-card-details p {
+  font-size: 14px;
+  margin: 2px 0;
+  color: #555;
+}
+
+.like-card-details .old-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-left: 6px;
+  font-size: 13px;
+}
+
+.like-card-actions {
+  display: flex;
+  flex-direction: row; /* 👈 side by side */
+  gap: 8px;
+  align-items: center;
+}
+
+.like-card-bag,
+.like-card-dislike {
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.like-card-bag:hover,
+.like-card-dislike:hover {
+  color: #d3a892;
+}
