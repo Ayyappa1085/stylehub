@@ -1,3 +1,8 @@
+const express = require('express');
+const router = express.Router();
+const User = require('../models/User');
+const nodemailer = require("nodemailer");
+
 // Get all orders for logged-in user
 router.get('/getorders', async (req, res) => {
   try {
@@ -15,10 +20,6 @@ router.get('/getorders', async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 });
-const express = require('express');
-const router = express.Router();
-const User = require('../models/User');
-const nodemailer = require("nodemailer");
 
 
 const transporter = nodemailer.createTransport({
