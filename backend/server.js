@@ -10,9 +10,16 @@ const app = express();
 
 // CORS setup
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: [
+    'http://localhost:5173',
+    'https://your-frontend-url.vercel.app', // <-- update to your deployed frontend URL
+  ],
   credentials: true,
 }));
+// For Vercel deployment:
+// 1. Add all secrets to Vercel dashboard (Environment Variables)
+// 2. Remove hardcoded localhost URLs in production
+// 3. Use process.env for all secrets
 
 app.use(express.json());
 
