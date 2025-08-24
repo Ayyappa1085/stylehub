@@ -1,7 +1,16 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
+const nodemailer = require("nodemailer");
 
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.EMAIL_USER,   // your Gmail (stylehud@gmail.com)
+    pass: process.env.EMAIL_PASS,   // app password from .env
+  },
+});
 // Register
 // Register new user
 router.post('/register', async (req, res) => {
@@ -147,6 +156,81 @@ router.post("/remove-cart", async (req, res) => {
   }
 });
 
+
+// Payments / Checkout
+// Create order after successful Razorpay payment
+router.post('/order', async (req, res) => {
+  try {
+    if (!req.session.userId) {
+      return res.status(401).json({ error: 'Not logged in' });
+    }
+
+    const { paymentId } = req.body;
+    if (!paymentId) {
+      return res.status(400).json({ error: 'paymentId is required' });
+    }
+
+    const user = await User.findById(req.session.userId);
+    if (!user) return res.status(404).json({ error: 'User not found' });
+
+    const cartSnapshot = user.cart || [];
+    const total = cartSnapshot.reduce((sum, p) => sum + (p.price || 0), 0);
+
+    // Save order
+    user.orders.push({
+      orderId: paymentId,
+      items: cartSnapshot,
+      total: total,
+      date: new Date(),
+    });
+    user.cart = [];
+    await user.save();
+
+    // Email to User
+    const userMail = {
+      from: process.env.EMAIL_USER,
+      to: user.email,
+      subject: "Your StyleHub Order Confirmation",
+      html: `
+        <h2>Hi ${user.name},</h2>
+        <p>Thank you for your order! 🎉</p>
+        <p><b>Order ID:</b> ${paymentId}</p>
+        <p><b>Total:</b> ₹${total}</p>
+        <h3>Items:</h3>
+        <ul>
+          ${cartSnapshot.map(item => `<li>${item.title} - ₹${item.price}</li>`).join("")}
+        </ul>
+        <p>We’ll notify you when your order ships.</p>
+      `
+    };
+
+    // Email to Seller
+    const sellerMail = {
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      subject: `New Order Received - ${paymentId}`,
+      html: `
+        <h2>New Order Alert 🚀</h2>
+        <p><b>User:</b> ${user.name} (${user.email}, ${user.mobile})</p>
+        <p><b>Order ID:</b> ${paymentId}</p>
+        <p><b>Total:</b> ₹${total}</p>
+        <h3>Items:</h3>
+        <ul>
+          ${cartSnapshot.map(item => `<li>${item.title} - ₹${item.price}</li>`).join("")}
+        </ul>
+      `
+    };
+
+    // Send emails
+    await transporter.sendMail(userMail);
+    await transporter.sendMail(sellerMail);
+
+    return res.json({ message: 'Order recorded & emails sent ✅', user });
+  } catch (err) {
+    console.error('Order creation error:', err);
+    return res.status(500).json({ error: 'Server error' });
+  }
+});
 
 
 
