@@ -14,9 +14,9 @@ const Header = () => {
 
   const [showLogin, setShowLogin] = useState(false);
 
-  const handleAccountClick = () => {
+  const handleAccountClick = (path) => {
     if (user) {
-      navigate('/account');
+      navigate(path);
     } else {
       setShowLogin(true);
     }
@@ -44,9 +44,9 @@ const Header = () => {
             <li title="Home" onClick={() => navigate('/')} className={path === '/' ? 'active-home' : ''}>
               <FaHome />
             </li>
-            <li title="Wishlist" onClick={() => navigate('/likes')} className={path === '/likes' ? 'active-likes' : ''}><FaHeart /></li>
-            <li title="Cart" onClick={() => navigate('/cart')} className={path === '/cart' ? 'active-cart' : ''}><FaCartPlus /></li>
-            <li title="Account" onClick={handleAccountClick}><FaUser /></li>
+            <li title="Wishlist" onClick={()=>handleAccountClick("/likes")} className={path === '/likes' ? 'active-likes' : ''}><FaHeart /></li>
+            <li title="Cart" onClick={()=> handleAccountClick("/cart")} className={path === '/cart' ? 'active-cart' : ''}><FaCartPlus /></li>
+            <li title="Account" onClick={()=>handleAccountClick("/account")} className={path === '/account' ? 'active-account' : ''}><FaUser /></li>
           </ul>
         </nav>
       </header>
