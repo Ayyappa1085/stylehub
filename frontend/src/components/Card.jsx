@@ -15,17 +15,31 @@ const Card = ({ id, image, title, subtitle, price, oldPrice, discount }) => {
 
   const product = { id, image, title, subtitle, price, oldPrice, discount };
 
+  // Check if product is liked
+  // Ensure likes are unique by product.id
+  const isLiked = user && Array.isArray(user.likes)
+    ? user.likes.some((p) => String(p.id) === String(product.id))
+    : false;
+
   const handleLike = async () => {
     if (!user) {
       setShowLogin(true);
       return;
     }
     try {
-      await axios.post('/users/like', { product });
+      if (isLiked) {
+        // Remove from wishlist
+        await axios.post('/users/unlike', { productId: product.id, title: product.title });
+      } else {
+        // Add to wishlist only if not already present
+        if (!user.likes.some((p) => String(p.id) === String(product.id))) {
+          await axios.post('/users/like', { product });
+        }
+      }
       const me = await axios.get('/users/me');
       setUser(me.data.user);
     } catch (err) {
-      alert(err.response?.data?.error || 'Error adding to likes');
+      alert(err.response?.data?.error || (isLiked ? 'Error removing from likes' : 'Error adding to likes'));
     }
   };
 
@@ -55,7 +69,11 @@ const Card = ({ id, image, title, subtitle, price, oldPrice, discount }) => {
             <span className="card-price">₹{price}</span>
             <span className="card-discount">{discount}%</span>
             <div className="card-actions">
-              <FaHeart className="action-icon" onClick={handleLike} />
+              <FaHeart
+                className="action-icon"
+                onClick={handleLike}
+                style={{ color: isLiked ? '#d3a892' : undefined, transition: 'color 0.2s' }}
+              />
               <BsBag className="action-icon" onClick={handleAddToCart} />
             </div>
           </div>
