@@ -51,5 +51,9 @@ mongoose.connect(process.env.MONGO_URI, {
 // Routes
 app.use('/api/users', require('./routes/users'));
 
+app.get('/', (req, res) => {
+  res.send('StyleHub backend is running!');
+});
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
