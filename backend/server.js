@@ -30,9 +30,9 @@ app.use(session({
     collectionName: 'sessions'
   }),
   cookie: {
-    secure: false,     // true only with https
+    secure: true,      // must be true for HTTPS on Vercel
     httpOnly: true,
-    sameSite: 'lax',
+    sameSite: 'none',  // allow cross-site cookies
     maxAge: 24 * 60 * 60 * 1000
   }
 }));
