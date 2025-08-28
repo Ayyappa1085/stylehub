@@ -10,11 +10,8 @@ const app = express();
 
 // CORS setup
 app.use(cors({
-  origin: [
-    'http://localhost:5173',
-    'https://your-frontend-url.vercel.app', // <-- update to your deployed frontend URL
-  ],
-  credentials: true,
+  origin: 'https://stylehub-bs8f.vercel.app',
+  credentials: true // if you use cookies or authentication
 }));
 // For Vercel deployment:
 // 1. Add all secrets to Vercel dashboard (Environment Variables)
