@@ -6,7 +6,7 @@ export const productData = {
   Men: {
     Shirts: [
       {
-        image: '/public/assets/shirt1.webp',
+  image: '/assets/shirt1.webp',
         title: 'COTTON STRETCH SHIRT',
         subtitle: 'BENEDICT - DARK GREY',
         price: 1994,
@@ -14,7 +14,7 @@ export const productData = {
         discount: 43,
       },
       {
-        image: '/public/assets/shirt2.webp',
+  image: '/assets/shirt2.webp',
         title: 'ABSTRACT PRINT SHIRT',
         subtitle: 'PAINTER - GREEN',
         price: 1567,
@@ -22,7 +22,7 @@ export const productData = {
         discount: 51,
       },
       {
-        image: '/public/assets/shirt3.webp',
+  image: '/assets/shirt3.webp',
         title: 'LINEN BLEND TURKISH 3 ...',
         subtitle: 'THRONE LS-25 - TEAL',
         price: 2799,
@@ -30,7 +30,7 @@ export const productData = {
         discount: 30,
       },
       {
-        image: '/public/assets/shirt4.webp',
+  image: '/assets/shirt4.webp',
         title: 'LINEN BLEND TURKISH 3 ...',
         subtitle: 'THRONE LS-25 - TEAL',
         price: 2799,
@@ -40,7 +40,7 @@ export const productData = {
     ],
     Pants: [
       {
-        image: '/public/assets/pant14.webp',
+  image: '/assets/pant14.webp',
         title: 'SLIM FIT PANTS',
         subtitle: 'BLACK',
         price: 1299,
@@ -48,7 +48,7 @@ export const productData = {
         discount: 35,
       },
       {
-        image: '/public/assets/pant11.avif',
+  image: '/assets/pant11.avif',
         title: 'SLIM FIT PANTS',
         subtitle: 'BLACK',
         price: 1299,
@@ -56,7 +56,7 @@ export const productData = {
         discount: 35,
       },
       {
-        image: '/public/assets/pant12.webp',
+  image: '/assets/pant12.webp',
         title: 'SLIM FIT PANTS',
         subtitle: 'BLACK',
         price: 1299,
@@ -64,7 +64,7 @@ export const productData = {
         discount: 35,
       },
       {
-        image: '/public/assets/pant13.webp',
+  image: '/assets/pant13.webp',
         title: 'SLIM FIT PANTS',
         subtitle: 'BLACK',
         price: 1299,
@@ -74,7 +74,7 @@ export const productData = {
     ],
      Belt: [
       {
-        image: '/public/assets/belt1.webp',
+  image: '/assets/belt1.webp',
         title: 'KIDS BELT',
         subtitle: 'BLACK',
         price: 199,
@@ -82,7 +82,7 @@ export const productData = {
         discount: 50,
       },
       {
-        image: '/public/assets/belt3.webp',
+  image: '/assets/belt3.webp',
         title: 'KIDS BELT',
         subtitle: 'BLACK',
         price: 199,
@@ -90,7 +90,7 @@ export const productData = {
         discount: 50,
       },
       {
-        image: '/public/assets/belt2.webp',
+  image: '/assets/belt2.webp',
         title: 'KIDS BELT',
         subtitle: 'BLACK',
         price: 199,
@@ -98,7 +98,7 @@ export const productData = {
         discount: 50,
       },
       {
-        image: '/public/assets/belt1.webp',
+  image: '/assets/belt1.webp',
         title: 'KIDS BELT',
         subtitle: 'BLACK',
         price: 199,
@@ -113,7 +113,7 @@ export const productData = {
   Women: {
     Sarees: [
       {
-        image: '/public/assets/saree1.avif',
+  image: '/assets/saree1.avif',
         title: 'SILK SAREE',
         subtitle: 'RED',
         price: 2499,
@@ -121,7 +121,7 @@ export const productData = {
         discount: 38,
       },
       {
-        image: '/public/assets/saree2.avif',
+  image: '/assets/saree2.avif',
         title: 'SILK SAREE',
         subtitle: 'RED',
         price: 2499,
@@ -129,7 +129,7 @@ export const productData = {
         discount: 38,
       },
       {
-        image: '/public/assets/saree3.avif',
+  image: '/assets/saree3.avif',
         title: 'SILK SAREE',
         subtitle: 'RED',
         price: 2499,
@@ -137,7 +137,7 @@ export const productData = {
         discount: 38,
       },
       {
-        image: '/public/assets/saree4.avif',
+  image: '/assets/saree4.avif',
         title: 'SILK SAREE',
         subtitle: 'RED',
         price: 2499,
@@ -149,7 +149,7 @@ export const productData = {
     ],
     Kurtas: [
       {
-        image: '/public/assets/kurta1.avif',
+  image: '/assets/kurta1.avif',
         title: 'COTTON KURTA',
         subtitle: 'BLUE',
         price: 999,
@@ -157,21 +157,21 @@ export const productData = {
         discount: 37,
       },
       {
-        image: '/public/assets/kurta4.avif',
+  image: '/assets/kurta4.avif',
         title: 'COTTON KURTA',
         subtitle: 'BLUE',
         price: 999,
         oldPrice: 1599,
         discount: 37,
       },{
-        image: '/public/assets/kurta3.avif',
+  image: '/assets/kurta3.avif',
         title: 'COTTON KURTA',
         subtitle: 'BLUE',
         price: 999,
         oldPrice: 1599,
         discount: 37,
       },{
-        image: '/public/assets/kurta2.avif',
+  image: '/assets/kurta2.avif',
         title: 'COTTON KURTA',
         subtitle: 'BLUE',
         price: 999,
