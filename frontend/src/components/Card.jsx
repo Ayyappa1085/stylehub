@@ -27,16 +27,16 @@ const Card = ({ id, image, title, subtitle, price, oldPrice, discount }) => {
       return;
     }
     try {
+      const token = localStorage.getItem('token');
+      const config = { headers: { Authorization: `Bearer ${token}` } };
       if (isLiked) {
-        // Remove from wishlist
-        await axios.post('/users/unlike', { productId: product.id, title: product.title });
+        await axios.post('/users/unlike', { productId: product.id, title: product.title }, config);
       } else {
-        // Add to wishlist only if not already present
         if (!user.likes.some((p) => String(p.id) === String(product.id))) {
-          await axios.post('/users/like', { product });
+          await axios.post('/users/like', { product }, config);
         }
       }
-      const me = await axios.get('/users/me');
+      const me = await axios.get('/users/me', config);
       setUser(me.data.user);
     } catch (err) {
       alert(err.response?.data?.error || (isLiked ? 'Error removing from likes' : 'Error adding to likes'));
@@ -49,8 +49,10 @@ const Card = ({ id, image, title, subtitle, price, oldPrice, discount }) => {
       return;
     }
     try {
-      await axios.post('/users/cart', { product });
-      const me = await axios.get('/users/me');
+      const token = localStorage.getItem('token');
+      const config = { headers: { Authorization: `Bearer ${token}` } };
+      await axios.post('/users/cart', { product }, config);
+      const me = await axios.get('/users/me', config);
       setUser(me.data.user);
     } catch (err) {
       alert(err.response?.data?.error || 'Error adding to cart');

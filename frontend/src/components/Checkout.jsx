@@ -4,7 +4,8 @@ import { useContext } from "react";
 import { UserContext } from "../App";
 
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
-axios.defaults.withCredentials = true;
+const token = localStorage.getItem('token');
+axios.defaults.headers.common['Authorization'] = token ? `Bearer ${token}` : '';
 
 const Checkout = ({ cart }) => {
   const { user, setUser } = useContext(UserContext);

@@ -23,16 +23,16 @@ const LoginModal = ({ open, onClose, onLoginSuccess }) => {
     }
     try {
   const res = await fetch(`${import.meta.env.VITE_API_URL}/users/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-        credentials: 'include', // keep cookies
-      });
-      const data = await res.json();
-      if (!res.ok) setError(data.error || 'Login failed');
-      else {
-        onLoginSuccess(data.user); // server returns { user }
-      }
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(form)
+  });
+  const data = await res.json();
+  if (!res.ok) setError(data.error || 'Login failed');
+  else {
+    localStorage.setItem('token', data.token); // Save JWT token
+    onLoginSuccess(data.user); // server returns { user }
+  }
     } catch (err) {
       setError('Unable to connect to server.');
     }
