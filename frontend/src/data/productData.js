@@ -183,7 +183,7 @@ export const productData = {
   Kids: {
     Shirts: [
       {
-        image: '/public/assets/bs13.avif',
+        image: '/assets/bs13.avif',
         title: 'KIDS SHIRT',
         subtitle: 'YELLOW',
         price: 499,
@@ -191,7 +191,7 @@ export const productData = {
         discount: 38,
       },
        {
-        image: '/public/assets/bs14.avif',
+        image: '/assets/bs14.avif',
         title: 'KIDS SHIRT',
         subtitle: 'YELLOW',
         price: 499,
@@ -199,7 +199,7 @@ export const productData = {
         discount: 38,
       },
       {
-        image: '/public/assets/bs12.avif',
+        image: '/assets/bs12.avif',
         title: 'KIDS SHIRT',
         subtitle: 'YELLOW',
         price: 499,
@@ -207,7 +207,7 @@ export const productData = {
         discount: 38,
       },
        {
-        image: '/public/assets/bs11.avif',
+        image: '/assets/bs11.avif',
         title: 'KIDS SHIRT',
         subtitle: 'YELLOW',
         price: 499,
@@ -218,7 +218,7 @@ export const productData = {
     ],
     Pants: [
       {
-        image: '/public/assets/bp11.avif',
+        image: '/assets/bp11.avif',
         title: 'KIDS PANTS',
         subtitle: 'GREEN',
         price: 599,
@@ -226,7 +226,7 @@ export const productData = {
         discount: 40,
       },
       {
-        image: '/public/assets/bp12.avif',
+        image: '/assets/bp12.avif',
         title: 'KIDS PANTS',
         subtitle: 'GREEN',
         price: 599,
@@ -234,7 +234,7 @@ export const productData = {
         discount: 40,
       },
       {
-        image: '/public/assets/bp13.avif',
+        image: '/assets/bp13.avif',
         title: 'KIDS PANTS',
         subtitle: 'GREEN',
         price: 599,
@@ -242,7 +242,7 @@ export const productData = {
         discount: 40,
       },
       {
-        image: '/public/assets/bp15.avif',
+        image: '/assets/bp15.avif',
         title: 'KIDS PANTS',
         subtitle: 'GREEN',
         price: 599,
@@ -255,7 +255,7 @@ export const productData = {
   Watches: {
     Analog: [
       {
-        image: '/public/assets/wat11.webp',
+        image: '/assets/wat11.webp',
         title: 'CLASSIC WATCH',
         subtitle: 'SILVER',
         price: 2999,
@@ -263,7 +263,7 @@ export const productData = {
         discount: 40,
       },
       {
-        image: '/public/assets/wat14.webp',
+        image: '/assets/wat14.webp',
         title: 'CLASSIC WATCH',
         subtitle: 'SILVER',
         price: 2999,
@@ -271,7 +271,7 @@ export const productData = {
         discount: 40,
       },
       {
-        image: '/public/assets/wat12.webp',
+        image: '/assets/wat12.webp',
         title: 'CLASSIC WATCH',
         subtitle: 'SILVER',
         price: 2999,
@@ -279,7 +279,7 @@ export const productData = {
         discount: 40,
       },
       {
-        image: '/public/assets/wat13.webp',
+        image: '/assets/wat13.webp',
         title: 'CLASSIC WATCH',
         subtitle: 'SILVER',
         price: 2999,
