@@ -4,7 +4,23 @@ const User = require('../models/User');
 const nodemailer = require("nodemailer");
 
 // Get all orders for logged-in user
-router.get('/getorders', async (req, res) => {
+const jwt = require('jsonwebtoken');
+
+function authMiddleware(req, res, next) {
+  const authHeader = req.headers.authorization;
+  if (!authHeader) return res.status(401).json({ error: 'No token provided' });
+  const token = authHeader.split(' ')[1];
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    req.userId = decoded.userId;
+    next();
+  } catch (err) {
+    return res.status(401).json({ error: 'Invalid token' });
+  }
+}
+
+
+router.get('/getorders', authMiddleware, async (req, res) => {
   try {
     if (!req.session.userId) {
       return res.status(401).json({ error: 'Not logged in' });
@@ -67,30 +83,23 @@ router.post('/login', async (req, res) => {
     return res.status(400).json({ error: 'Invalid credentials' });
   }
 
-  req.session.userId = user._id;  // store session
-  await req.session.save();       // ensure session saved
-  res.json({ user });
+  const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, { expiresIn: '1d' });
+  res.json({ user, token });
 });
 
 // Logout
 router.post('/logout', (req, res) => {
-  req.session.destroy(() => {
-    res.clearCookie('connect.sid'); // default cookie name from express-session
-    return res.json({ message: 'Logged out' });
-  });
+  return res.json({ message: 'Logged out' });
 });
 
 // Me
-router.get('/me', async (req, res) => {
-  if (!req.session.userId) {
-    return res.status(401).json({ error: 'Not logged in' });
-  }
-  const user = await User.findById(req.session.userId);
+router.get('/me', authMiddleware, async (req, res) => {
+  const user = await User.findById(req.userId);
   res.json({ user });
 });
 
 // Like product
-router.post('/like', async (req, res) => {
+router.post('/like', authMiddleware, async (req, res) => {
   if (!req.session.userId) {
     return res.status(401).json({ error: 'Not logged in' });
   }
@@ -102,7 +111,7 @@ router.post('/like', async (req, res) => {
 });
 
 // Add to cart
-router.post('/cart', async (req, res) => {
+router.post('/cart', authMiddleware, async (req, res) => {
   if (!req.session.userId) {
     return res.status(401).json({ error: 'Not logged in' });
   }
@@ -117,7 +126,7 @@ router.post('/cart', async (req, res) => {
 // Remove product from likes
 // Remove product from likes
 // Remove product from likes
-router.post("/unlike", async (req, res) => {
+router.post("/unlike", authMiddleware, async (req, res) => {
   try {
     if (!req.session.userId) {
       return res.status(401).json({ error: "Not logged in" });
@@ -145,7 +154,7 @@ router.post("/unlike", async (req, res) => {
   }
 });
 
-router.post("/remove-cart", async (req, res) => {
+router.post("/remove-cart", authMiddleware, async (req, res) => {
   try {
     if (!req.session.userId) {
       return res.status(401).json({ error: "Not logged in" });
@@ -177,7 +186,7 @@ router.post("/remove-cart", async (req, res) => {
 
 // Payments / Checkout
 // Create order after successful Razorpay payment
-router.post('/order', async (req, res) => {
+router.post('/order', authMiddleware, async (req, res) => {
   try {
     if (!req.session.userId) {
       return res.status(401).json({ error: 'Not logged in' });

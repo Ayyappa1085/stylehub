@@ -1,8 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const session = require('express-session');
-const MongoStore = require('connect-mongo');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -20,22 +18,6 @@ app.use(cors({
 
 app.use(express.json());
 
-// Session setup (with MongoDB)
-app.use(session({
-  secret: process.env.SESSION_SECRET || 'stylehub_secret',
-  resave: false,
-  saveUninitialized: false,
-  store: MongoStore.create({
-    mongoUrl: process.env.MONGO_URI,
-    collectionName: 'sessions'
-  }),
-  cookie: {
-    secure: true,      // must be true for HTTPS on Vercel
-    httpOnly: true,
-    sameSite: 'none',  // allow cross-site cookies
-    maxAge: 24 * 60 * 60 * 1000
-  }
-}));
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
