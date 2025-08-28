@@ -5,7 +5,7 @@ import Checkout from "../components/Checkout";
 import { UserContext } from "../App";
 import "./Cart.css";
 
-axios.defaults.baseURL = "http://localhost:5000/api";
+axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 axios.defaults.withCredentials = true;
 
 const Cart = ({ className }) => {

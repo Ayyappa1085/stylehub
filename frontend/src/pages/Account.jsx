@@ -22,7 +22,7 @@ const Account = () => {
       try {
         setLoading(true);
         setError("");
-        const res = await fetch("http://localhost:5000/api/users/me", {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/users/me`, {
           method: "GET",
           credentials: "include",
         });
@@ -47,7 +47,7 @@ const Account = () => {
   const fetchOrders = async () => {
     setOrdersLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/users/getorders", {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/users/getorders`, {
         method: "GET",
         credentials: "include",
       });
@@ -71,7 +71,7 @@ const Account = () => {
     setTrackLoading(true);
     setTrackResult(null);
     try {
-      const res = await fetch(`http://localhost:5000/api/orders/track/${trackId}`, {
+  const res = await fetch(`${import.meta.env.VITE_API_URL}/orders/track/${trackId}`, {
         method: "GET",
         credentials: "include",
       });
@@ -91,7 +91,7 @@ const Account = () => {
   // Handle logout
   const handleLogout = async () => {
     try {
-      await fetch("http://localhost:5000/api/users/logout", {
+  await fetch(`${import.meta.env.VITE_API_URL}/users/logout`, {
         method: "POST",
         credentials: "include",
       });

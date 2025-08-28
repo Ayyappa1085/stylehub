@@ -2,7 +2,7 @@ import { FaCartPlus, FaHeartBroken } from "react-icons/fa";
 import axios from "axios";
 import "./LikeCard.css";
 
-axios.defaults.baseURL = "http://localhost:5000/api";
+axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 axios.defaults.withCredentials = true;
 
 const LikeCard = ({ product, onAddedToCart, onRemovedFromLikes }) => {

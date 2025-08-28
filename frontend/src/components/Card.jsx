@@ -6,7 +6,7 @@ import { useContext, useState } from 'react';
 import { UserContext } from '../App';
 import LoginModal from './LoginModal';
 
-axios.defaults.baseURL = 'http://localhost:5000/api';
+axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 axios.defaults.withCredentials = true;
 
 const Card = ({ id, image, title, subtitle, price, oldPrice, discount }) => {
